@@ -1,1 +1,1 @@
-# -bootdev-asteroids
+# bootdev-asteroids
