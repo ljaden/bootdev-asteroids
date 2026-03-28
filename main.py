@@ -44,8 +44,6 @@ def main():
                 return
 
         screen.fill("black")
-        #player.draw(screen)
-        #player.update(dt)
 
         updatable.update(dt)
 
@@ -62,7 +60,7 @@ def main():
                 if i.collides_with(bullet):
                     print("asteroid_shot")
                     log_event("asteroid_shot")
-                    i.kill()
+                    i.split()
                     bullet.kill()
 
 
