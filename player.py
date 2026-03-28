@@ -52,7 +52,6 @@ class Player(CircleShape):
 
         # reduce shot_cooldown by dt(delta time)
         self.shot_cooldown -= dt
-        print(self.shot_cooldown)
 
     def move(self, dt):
         unit_vector = pygame.Vector2(0, 1)

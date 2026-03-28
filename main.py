@@ -31,7 +31,7 @@ def main():
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = updatable
 
-    Shot.containers = (shots, drawable, updatable)
+    Shot.containers = (shots,drawable, updatable)
 
     asteroidField = AsteroidField()
 
@@ -48,12 +48,22 @@ def main():
         #player.update(dt)
 
         updatable.update(dt)
+
+
         # iterate over asteroid group
         for i in asteroids:
             if i.collides_with(player):
                 log_event("player_hit")
                 print("Game Over")
                 sys.exit()
+
+            # collision check (asteriod & bullets)
+            for bullet in shots:
+                if i.collides_with(bullet):
+                    print("asteroid_shot")
+                    log_event("asteroid_shot")
+                    i.kill()
+                    bullet.kill()
 
 
         for i in drawable:
